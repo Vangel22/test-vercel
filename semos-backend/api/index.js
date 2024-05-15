@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("Express on Vercel");
+  res.send(`This is an environment variable: ${process.env.TEST}`);
 });
 
 app.get("/test", (req, res) => {
