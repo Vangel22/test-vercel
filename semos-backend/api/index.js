@@ -19,6 +19,7 @@ const data = [
 app.use(cors()); // allows request from any origin
 // it helps with cookies transfer to another origin to keep you safe
 
+// this is the home route
 app.get("/", (req, res) => {
   return res.send(`This is an environment variable: ${process.env.TEST}`);
 });
