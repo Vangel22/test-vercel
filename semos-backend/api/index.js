@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 
 const data = [
   {
@@ -17,9 +18,8 @@ const data = [
 ];
 
 app.use(cors()); // allows request from any origin
-// it helps with cookies transfer to another origin to keep you safe
+// // it helps with cookies transfer to another origin to keep you safe
 
-// this is the home route
 app.get("/", (req, res) => {
   return res.send(`This is an environment variable: ${process.env.TEST}`);
 });
@@ -32,7 +32,7 @@ app.get("/data", (req, res) => {
   return res.send(data);
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5005;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

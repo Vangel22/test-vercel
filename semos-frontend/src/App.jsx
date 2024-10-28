@@ -27,7 +27,12 @@ function App() {
   return (
     <>
       <h1>Connecting via Vercel</h1>
-      <div className="card">
+      <div 
+        style={{
+          display: "flex",
+          flexDirection: "column"
+        }}
+      >
         {data && data.map(d => <span key={d.id}>{d.name}</span>)}
       </div>
     </>
