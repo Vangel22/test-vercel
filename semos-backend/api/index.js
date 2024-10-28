@@ -1,12 +1,31 @@
 const express = require("express");
 const app = express();
 
+const data = [
+  {
+    id: 1,
+    name: "Ace",
+  },
+  {
+    id: 2,
+    name: "Riste",
+  },
+  {
+    id: 3,
+    name: "Ceca",
+  },
+];
+
 app.get("/", (req, res) => {
-  res.send(`This is an environment variable: ${process.env.TEST}`);
+  return res.send(`This is an environment variable: ${process.env.TEST}`);
 });
 
 app.get("/test", (req, res) => {
   return res.send(`Hello ${req.query.name}`);
+});
+
+app.get("/data", (req, res) => {
+  return res.send(data);
 });
 
 const PORT = process.env.PORT || 5000;
